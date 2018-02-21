@@ -1,0 +1,39 @@
+VISTAS
+
+vista de Quito
+
+function(doc){
+	if(doc.place.name == "Quito" && doc.user.lang == "es"){
+		emit(doc.id,doc.text);
+	}
+}
+
+Vista de Guayaquil
+
+function(doc){
+	if(doc.place.name == "Guayaquil" && doc.user.lang == "es"){
+		emit(doc.id,doc.text);
+	}
+}
+
+
+Vista Cuenca
+
+function(doc){
+	if(doc.place.name == "Cuenca" && doc.user.lang == "es"){
+		emit(doc.id,doc.text);
+	}
+}
+
+Vista de todos menos Guayaquil, Quito y Cuenca para el train
+
+function(doc){
+	if(doc.place.name != "Quito" && doc.place.name != "Guayaquil" && doc.place.name != "Cuenca" && doc.place.country == "Ecuador" && doc.user.lang == "es"){
+		emit(doc.id,doc.text);
+	}
+}
+
+
+
+
+
